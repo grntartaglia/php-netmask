@@ -1,0 +1,12 @@
+{
+    "name": "grntartaglia/netmask",
+    "description": "Parse and lookup IP network blocks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriel Tartaglia",
+            "email": "gabriel@cappu.com.br"
+        }
+    ],
+    "require": {}
+}
