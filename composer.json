@@ -8,5 +8,10 @@
             "email": "gabriel@cappu.com.br"
         }
     ],
-    "require": {}
+    "require": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {"Netmask\\": "src/Netmask"}
+    }
 }
