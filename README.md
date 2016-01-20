@@ -3,6 +3,13 @@ Netmask
 
 The Netmask class parses and understands IPv4 CIDR blocks so they can be explored and compared. This module is highly inspired by [node-netmask](https://github.com/rs/node-netmask) module.
 
+Installation
+-----------
+
+```shell
+$ composer require grntartaglia/netmask
+```
+
 Synopsis
 --------
 
