@@ -6,7 +6,7 @@ The Netmask class parses and understands IPv4 CIDR blocks so they can be explore
 Translations
 ------------
 
-- [Português (Brasil)](translations/README.pt-br.md)
+- [Português (Brasil)](translations/README.pt-BR.md)
 
 Installation
 -----------
