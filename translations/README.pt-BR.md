@@ -1,21 +1,16 @@
 Netmask
 =======
 
-The Netmask class parses and understands IPv4 CIDR blocks so they can be explored and compared. This module is highly inspired by [node-netmask](https://github.com/rs/node-netmask) module.
+A classe Netmask analisa blocos IPv4 CIDR para que eles possam ser explorados e comparados. Este módulo é altamente inspirado pelo módulo [node-netmask](https://github.com/rs/node-netmask).
 
-Translations
-------------
-
-- [Português (Brasil)](translations/README.pt-br.md)
-
-Installation
+Instalação
 -----------
 
 ```shell
 $ composer require grntartaglia/netmask
 ```
 
-Synopsis
+Sinopse
 --------
 
 ```php
@@ -41,30 +36,30 @@ foreach ($block->getAll() as $ip) {
 }
 ```
 
-Constructing
+Construindo
 ------------
 
-Netmask objects are created with an IP address and optionally a mask. There are many forms that are recognized:
+Objetos Netmask são construídos com um endereço IP e opcionalmente uma máscara. São aceitas as seguintes formas:
 
 ```php
-new Netmask('192.168.0.1/24');            // The preferred form.
-new Netmask('192.168.0.1');               // A /32 block.
+new Netmask('192.168.0.1/24');            // A forma recomendada.
+new Netmask('192.168.0.1');               // Um bloco /32.
 new Netmask('192.168.0.1/255.255.255.0');
 ```
 
 API
 ---
 
-- `->base`: The base address of the network block as a string (eg: 216.240.32.0). Base does not give an indication of the size of the network block.
-- `->mask`: The netmask as a string (eg: 255.255.255.0).
-- `->hostmask`: The host mask which is the opposite of the netmask (eg: 0.0.0.255).
-- `->bitmask`: The netmask as a number of bits in the network portion of the address for this block (eg: 24).
-- `->size`: The number of IP addresses in a block (eg: 256).
-- `->broadcast`: The blocks broadcast address (eg: 192.168.1.0/24 => 192.168.1.255)
-- `->first`, `->last`: First and last useable address
-- `->contains($ip or $block)`: Returns a true if the IP number `$ip` is part of the network. That is, a true value is returned if `$ip` is between `$base` and `$broadcast`. If a Netmask object or a block is given, it returns true only of the given block fits inside the network.
-- `->getAll()`: Returns an array with all the useable addresses, ie between `$first` and `$last`.
-- `->__toString()`: The netmask in base/bitmask format (e.g., '216.240.32.0/24')
+- `->base`: O endereço base do bloco de rede como string (ex.: 216.240.32.0). A base não dá uma indicação do tamanho do bloco.
+- `->mask`: A máscara de rede como string (ex.: 255.255.255.0).
+- `->hostmask`: A máscara do host, que é o oposto da máscara de rede (ex.: 0.0.0.255).
+- `->bitmask`: A máscara de rede como um número de bits (ex.: 24).
+- `->size`: O número de endereços IP do bloco (eg: 256).
+- `->broadcast`: O endereço broadcast do bloco (eg: 192.168.1.0/24 => 192.168.1.255).
+- `->first`, `->last`: Primeiro e último endereço IP.
+- `->contains($ip or $block)`: Retorna `true` se o número IP `$ip` for parte da rede. Isto é, um valor verdadeiro é retornado se `$ip` estiver entre `$base` e `$broadcast`. Se um objeto Netmask ou um bloco for passado, o valor retornado é verdadeiro somente se o bloco dado se encaixar dentro da rede.
+- `->getAll()`: Retorna uma array com todos os endereços IP, isto é, entre `$first` e `$last`.
+- `->__toString()`: A máscara de rede no formato base/bitmask (ex.: '216.240.32.0/24')
 
 License
 -------
